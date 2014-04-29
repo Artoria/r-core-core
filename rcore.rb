@@ -2,11 +2,11 @@ require 'erb'
 class RCore
   attr_accessor :io
   def initialize
-    self.io = []
+    self.io = {}
   end
 
   def render(a, b)
-    io[-1] << ERB.new(a).result(b.instance_eval{binding})
+    io[:<<] << ERB.new(a).result(b.instance_eval{binding})
   end
 
   def resolve(a)
