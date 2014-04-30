@@ -1,3 +1,4 @@
+require 'erb'
 class RTCEnv
   IOStack = Struct.new(:next, :io)
   attr_accessor :io
